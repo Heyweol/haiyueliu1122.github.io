@@ -50,7 +50,7 @@ linkedin_username: Haiyue Liu
 
 # About Section
 # about_title: About Me (Use this to override about section title)
-about_profile_image: images/IMG_ResumeUsed.jpg
+about_profile_image: images/IMG_ResumeUsed.JPG
 about_content: | # this will include new lines to allow paragraphs
  Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>like this</mark>.
  Welcome to my page! My name is Haiyue Liu, and I major in Cartography & GIS and Computer Science at University of Wisconsin-Madison in my junior year. I'm good at...
