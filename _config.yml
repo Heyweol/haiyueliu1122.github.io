@@ -52,35 +52,41 @@ linkedin_username: Haiyue Liu
 # about_title: About Me (Use this to override about section title)
 about_profile_image: images/IMG_ResumeUsed.JPG
 about_content: | # this will include new lines to allow paragraphs
- Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>like this</mark>.
- Welcome to my page! My name is Haiyue Liu, and I major in Cartography & GIS and Computer Science at University of Wisconsin-Madison in my junior year. I'm good at...
+#  Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>like this</mark>.
+ Welcome to my page! My name is Haiyue Liu, and I major in Cartography & GIS and Computer Science at University of Wisconsin-Madison in my junior year.
   # You can even add paragraphs by using empty lines like this and add anything else [markdown](https://www.markdownguide.org/getting-started#what-is-markdown) supports such as
-    - Lists
-    - Tables
-    - <a href="google.com">Links</a>
-    - Images ![alt text](/images/landscape-trees.jpg "Trees")
+    # - Lists
+    # - Tables
+    # - <a href="google.com">Links</a>
+    # - Images ![alt text](/images/landscape-trees.jpg "Trees")
 
 content:
-  - title: Projects # Title for the section
-    layout: list # Type of content section (list/text)
-    content:
-      - layout: left
-        border: weak  # Value of `weak` will display a weak border below this item. # Any 
-                      # other value (or no value) means no border will be displayed
-        title: Project name
-        link: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
-        link_text: Link Text
-        additional_links:
-          - title:  Github page for project (eg. sproogen/modern-resume-theme)
-            icon: fab fa-github
-            url: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
-          - title:  Github page for project (eg. sproogen/modern-resume-theme)
-            icon: fab fa-github
-            url: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
-        quote: >
-          Short overview of the project (optional)
-        description: | # this will include new lines to allow paragraphs
-          Description about the work on/with the project
+
+
+  # - title: Projects # Title for the section
+  #   layout: list # Type of content section (list/text)
+  #   content:
+  #     - layout: left
+  #       border: weak  # Value of `weak` will display a weak border below this item. # Any 
+  #                     # other value (or no value) means no border will be displayed
+  #       title: Project name
+  #       link: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
+  #       link_text: Link Text
+  #       additional_links:
+  #         - title:  Github page for project (eg. sproogen/modern-resume-theme)
+  #           icon: fab fa-github
+  #           url: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
+  #         - title:  Github page for project (eg. sproogen/modern-resume-theme)
+  #           icon: fab fa-github
+  #           url: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
+  #       quote: >
+  #         Short overview of the project (optional)
+  #       description: | # this will include new lines to allow paragraphs
+  #         Description about the work on/with the project
+
+
+
+
   - title: Experience
     layout: list
     content:
@@ -93,8 +99,11 @@ content:
         #   Short description of the company (optional)
         description: | # this will include new lines to allow paragraphs
           •	Assisted to develop algorithms to build and refine the language model.
+
           •	Managed large computational resources necessary for training large models.
+
           •	Trained the model using state-of-the-art deep learning frameworks.
+
       - layout: right
         title: Spatial Computing and Data Mining Lab at University of Wisconsin-Madison                         
         sub_title: Research Assistant 
@@ -104,8 +113,11 @@ content:
         #   Short description of the company (optional)
         description: | # this will include new lines to allow paragraphs
           •	Mapped and Completed GIS analysis Potential Impact of Florida SB264 (Agricultural Land, Critical Infrastructure and Military Installation Zone).
+
           •	Leveraged Python for Machine Learning in Research.
+
           •	Creation of an interactive online map presentation web page for the results of the study
+
       - layout: right
         title: Koop Lab at Northern Illinois University, Biology Department                         
         sub_title: Research Assistant 
@@ -115,7 +127,9 @@ content:
         #   Short description of the company (optional)
         description: | # this will include new lines to allow paragraphs
           •	Produced maps of habitats and migration routes of waterfowl creatures along the Mississippi River with ArcGIS Pro and MATLAB; gave software tutorials to other assistants and students in the lab.
+
           •	Watched over the faucet snails in the lab; monitored and reported their stats.
+
           •	Read and synopsized research on ecological geography to report during weekly meetings.
 
 
@@ -126,20 +140,30 @@ content:
         title: University of Wisconsin-Madison                                                                                                    
         sub_title: Undergraduate Studies in Cartography and Geographic Information Systems, Computer Science
         caption: Sept.23-present
+      - layout: top-right
+        title: Northern Illinois University                                                                                                   
+        sub_title: Undergraduate Studies in Geography Information Systems
+        caption: Sept.21-June.23
         # quote: >
         #   Short institution or course description (optional)
         # description: | # this will include new lines to allow paragraphs
   - title: My Skills & A Little More About Me :)
     layout: text
     content: |
-      'Language: C++, Python, Java, JavaScript, HTML5, CSS
-      GIS: ArcGIS Pro, Arc GIS, QGIS, Google Earth
-      Data: SQL, Mongo DB, MATLAB, SPSS, Tableau, R
-      Others: Adobe software (Photoshop, Lightroom, Acrobat)
+      <Language:> C++, Python, Java, JavaScript, HTML5, CSS
+
+      <GIS:> ArcGIS Pro, Arc GIS, QGIS, Google Earth
+
+      <Data:> SQL, Mongo DB, MATLAB, SPSS, Tableau, R
+
+      <Others:> Adobe software (Photoshop, Lightroom, Acrobat)
 
       I'm presently in my junior year pursuing dual majors in Cartography & GIS and Computer Science at the University of Wisconsin-Madison. 
+
       I'm keen on leveraging my background in GIS analysis and software development to work on projects that sit at the intersection of both fields. 
+
       My academic background arms me with the skills to analyze spatial data intricately and develop robust computer programs.
+
       I'm looking forward to finding an internship work in summer 2024. 
       
 
