@@ -1,6 +1,5 @@
 # Site
 repository: Git repository where your resume will be hosted, only required if you are hosting on GitHub (eg. sproogen/modern-resume-theme)
-# favicon: Directory of your favicon (eg. images/favicon.ico)(optional)
 
 # Content configuration version
 version: 2
@@ -9,78 +8,25 @@ version: 2
 name: Haiyue Liu
 title: Student at University of Wisconsin-Madison
 email: hliu746@wisc.edu / haiyueliu1122@gmail.com
-# email_title: Email (Email title override)
-phone: 7797752283
-# phone_title: Phone (Phone title override)
-website: Heyweol.github.io
-# website_title: Web (Website title override)
 
-# Dark Mode (true/false/never)
+phone: 7797752283
+
+website: Heyweol.github.io
+
+
+
 darkmode: false
 
-# Social links
-#twitter_username: jekyllrb
+
 github_username:  Heyweol
-#stackoverflow_username: "00000001"
-#dribbble_username: jekyll
-#facebook_username: jekyll
-#flickr_username: jekyll
-#instagram_username: jekyll
+
 linkedin_username: Haiyue Liu
-#xing_username: jekyll
-#pinterest_username: jekyll
-#youtube_username: jekyll
-#orcid_username: 0000-0000-0000-0000
-#googlescholar_username: D847cGsAAAAJ
 
-# Additio  nal icon links
-# additional_links:
-# - title: Link name     
-#   icon: Font Awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&s=brands&m=free)
-#   url: Link url (eg. https://google.com)
-# - title: another link
-#   icon: font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&s=brands&m=free)
-#   url: Link url (eg. https://google.com)
-
-# Google Analytics and Tag Manager
-# Using more than one of these may cause issues with reporting
-# gtm: "GTM-0000000"
-# gtag: "UA-00000000-0"
-# google_analytics: "UA-00000000-0"
-
-# About Section
-# about_title: About Me (Use this to override about section title)
 about_profile_image: images/IMG_ResumeUsed.JPG
-about_content: | # this will include new lines to allow paragraphs
+about_content: | 
   Welcome to my page! My name is Haiyue Liu, and I major in Cartography & GIS and Computer Science at University of Wisconsin-Madison in my junior year.
 
 content:
-
-
-  # - title: Projects # Title for the section
-  #   layout: list # Type of content section (list/text)
-  #   content:
-  #     - layout: left
-  #       border: weak  # Value of `weak` will display a weak border below this item. # Any 
-  #                     # other value (or no value) means no border will be displayed
-  #       title: Project name
-  #       link: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
-  #       link_text: Link Text
-  #       additional_links:
-  #         - title:  Github page for project (eg. sproogen/modern-resume-theme)
-  #           icon: fab fa-github
-  #           url: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
-  #         - title:  Github page for project (eg. sproogen/modern-resume-theme)
-  #           icon: fab fa-github
-  #           url: Link to project (eg. sproogen.github.io/modern-resume-theme)(optional)
-  #       quote: >
-  #         Short overview of the project (optional)
-  #       description: | # this will include new lines to allow paragraphs
-  #         Description about the work on/with the project
-
-
-
-
   - title: Experience
     layout: list
     content:
@@ -89,8 +35,7 @@ content:
         sub_title: Intern AI Developer
         caption: June-Aug.2023
         link: https://www.bytedance.com/en/
-        # quote: >
-        #   Short description of the company (optional)
+        
         description: | # this will include new lines to allow paragraphs
           •	Assisted to develop algorithms to build and refine the language model.
 
@@ -103,8 +48,7 @@ content:
         sub_title: Research Assistant 
         caption: May.2023-present
         link: https://scdm.geography.wisc.edu
-        # quote: >
-        #   Short description of the company (optional)
+        
         description: | # this will include new lines to allow paragraphs
           •	Mapped and Completed GIS analysis Potential Impact of Florida SB264 (Agricultural Land, Critical Infrastructure and Military Installation Zone).
 
@@ -117,8 +61,7 @@ content:
         sub_title: Research Assistant 
         caption: Aug.—Dec.2022
         link: https://jenniferkoop.weebly.com
-        # quote: >
-        #   Short description of the company (optional)
+        
         description: | # this will include new lines to allow paragraphs
           •	Produced maps of habitats and migration routes of waterfowl creatures along the Mississippi River with ArcGIS Pro and MATLAB; gave software tutorials to other assistants and students in the lab.
 
@@ -138,9 +81,8 @@ content:
         title: Northern Illinois University                                                                                                   
         sub_title: Undergraduate Studies in Geography Information Systems
         caption: Sept.21-June.23
-        # quote: >
-        #   Short institution or course description (optional)
-        # description: | # this will include new lines to allow paragraphs
+
+        # description: | 
   - title: My Skills & A Little More About Me :)
     layout: text
     content: |
@@ -161,13 +103,8 @@ content:
       I'm looking forward to finding an internship work in summer 2024. 
       
 
-# Footer
-footer_show_references: true
-# references_title: References on request (Override references text)
 
-# Build settings
-# theme: modern-resume-theme (Use this is you are hosting your resume yourself)
-# remote_theme: sproogen/modern-resume-theme (Use this if you are hosting your resume on GitHub)
+footer_show_references: true
 
 sass:
   sass_dir: _sass
