@@ -131,7 +131,7 @@ content:
         # description: | # this will include new lines to allow paragraphs
   - title: My Skills & A Little More About Me :)
     layout: text
-    content:
+    content: |
       'Language: C++, Python, Java, JavaScript, HTML5, CSS
       GIS: ArcGIS Pro, Arc GIS, QGIS, Google Earth
       Data: SQL, Mongo DB, MATLAB, SPSS, Tableau, R
