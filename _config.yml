@@ -27,6 +27,7 @@ about_content: |
   Welcome to my page! My name is Haiyue Liu, and I major in Cartography & GIS and Computer Science at University of Wisconsin-Madison in my junior year.
 
 content:
+
   - title: Experience
     layout: list
     content:
@@ -69,7 +70,6 @@ content:
 
           •	Read and synopsized research on ecological geography to report during weekly meetings.
 
-
   - title: Education
     layout: list
     content:
@@ -101,7 +101,30 @@ content:
       My academic background arms me with the skills to analyze spatial data intricately and develop robust computer programs.
 
       I'm looking forward to finding an internship work in summer 2024. 
-      
+  
+  
+  - title: Porject
+    layout: list
+    content:
+      - layout: top-right
+        title: University of Chicago-Peking University Environmental Economics & Policy Lab                                                                                                   
+        sub_title: Summer school
+        caption: July-Aug.23
+        description: | # this will include new lines to allow paragraphs
+        **Analysis of ESG Report Content in Traditional Industries**
+        
+        •	Data Collection and Analysis: Harvested and scrutinized ESG reports from traditional companies in the textile, construction, and cement industries spanning the last 10 years to assess their adherence to social responsibility mandates.
+        
+        •	Python Scripting: Utilized Python for data cleansing and analytical operations, investigating the economic performance, investment strategies, and societal trust of targeted companies over a decade, positioning myself well to manage large data sets and conduct complex analyses, a critical skill set for a quantitative analyst.
+        
+
+        **Analysis of Environmental and Geographic Issues in South Korea**
+        
+        •	Geospatial Analysis: Conducted a detailed analysis of population distribution in various geographical contexts in South Korea, summarizing energy consumption patterns and identifying prevalent issues in the contemporary geographic landscape, a foundation for understanding complex systems and identifying trends.
+        
+        •	Sustainability Consulting: Formulated sustainable development solutions, leveraging policy support and governance to harmonize sustainable and non-sustainable resources, thereby enhancing geographic biodiversity and advocating for natural resource conservation, showcasing an ability to develop strategies based on analytical findings, a valuable asset for quantitative analysis roles.
+
+
 
 
 footer_show_references: true
