@@ -52,8 +52,8 @@ linkedin_username: Haiyue Liu
 # about_title: About Me (Use this to override about section title)
 # about_profile_image: /Users/eugenieliu/Downloads/IMG_1865.jpg)
 about_content: | # this will include new lines to allow paragraphs
-Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>like this</mark>.
-Welcome to my page! My name is Haiyue Liu, and I major in Cartography & GIS and Computer Science at University of Wisconsin-Madison in my junior year. I'm good at...
+ Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>like this</mark>.
+ Welcome to my page! My name is Haiyue Liu, and I major in Cartography & GIS and Computer Science at University of Wisconsin-Madison in my junior year. I'm good at...
   # You can even add paragraphs by using empty lines like this and add anything else [markdown](https://www.markdownguide.org/getting-started#what-is-markdown) supports such as
     - Lists
     - Tables
