@@ -12,7 +12,7 @@ email: hliu746@wisc.edu / haiyueliu1122@gmail.com
 # email_title: Email (Email title override)
 phone: 7797752283
 # phone_title: Phone (Phone title override)
-website: Your website (eg. https://google.com)(optional)
+website: Heyweol.github.io
 # website_title: Web (Website title override)
 
 # Dark Mode (true/false/never)
@@ -50,7 +50,7 @@ linkedin_username: Haiyue Liu
 
 # About Section
 # about_title: About Me (Use this to override about section title)
-about_profile_image: /Users/eugenieliu/Downloads/IMG_1865.jpg)
+# about_profile_image: /Users/eugenieliu/Downloads/IMG_1865.jpg)
 about_content: | # this will include new lines to allow paragraphs
 # Write an awesome description about yourself here, this supports markdown, so you can add [links](http://foobar.com) and highlight things <mark>like this</mark>.
 Welcome to my page! My name is Haiyue Liu, and I major in Cartography & GIS and Computer Science at University of Wisconsin-Madison in my junior year. I'm good at...
@@ -85,31 +85,65 @@ content:
     layout: list
     content:
       - layout: right
-        title: Company name
-        sub_title: Job title
-        caption: Date Range (eg. November 2016 - present)
-        link: Link to company (optional)
-        quote: >
-          Short description of the company (optional)
+        title: Byte Dance
+        sub_title: Intern AI Developer
+        caption: June-Aug.2023
+        link: https://www.bytedance.com/en/
+        # quote: >
+        #   Short description of the company (optional)
         description: | # this will include new lines to allow paragraphs
-          Description of role
+          •	Assisted to develop algorithms to build and refine the language model.
+          •	Managed large computational resources necessary for training large models.
+          •	Trained the model using state-of-the-art deep learning frameworks.
+    content:
+      - layout: right
+        title: Spatial Computing and Data Mining Lab at University of Wisconsin-Madison                         
+        sub_title: Research Assistant 
+        caption: May.2023-present
+        link: https://scdm.geography.wisc.edu
+        # quote: >
+        #   Short description of the company (optional)
+        description: | # this will include new lines to allow paragraphs
+          •	Mapped and Completed GIS analysis Potential Impact of Florida SB264 (Agricultural Land, Critical Infrastructure and Military Installation Zone).
+          •	Leveraged Python for Machine Learning in Research.
+          •	Creation of an interactive online map presentation web page for the results of the study
+      content:
+      - layout: right
+        title: Koop Lab at Northern Illinois University, Biology Department                         
+        sub_title: Research Assistant 
+        caption: Aug.—Dec.2022
+        link: https://jenniferkoop.weebly.com
+        # quote: >
+        #   Short description of the company (optional)
+        description: | # this will include new lines to allow paragraphs
+          •	Produced maps of habitats and migration routes of waterfowl creatures along the Mississippi River with ArcGIS Pro and MATLAB; gave software tutorials to other assistants and students in the lab.
+          •	Watched over the faucet snails in the lab; monitored and reported their stats.
+          •	Read and synopsized research on ecological geography to report during weekly meetings.
+
+
   - title: Education
     layout: list
     content:
       - layout: top-right
-        title: Institution name
-        sub_title: Qualifications (eg. BA Performing Arts)
-        caption: Date Range (eg. 2016 - 2019)
-        quote: >
-          Short institution or course description (optional)
-        description: | # this will include new lines to allow paragraphs
-          Description of qualification
-  - title: A Little More About Me
+        title: University of Wisconsin-Madison                                                                                                    
+        sub_title: Undergraduate Studies in Cartography and Geographic Information Systems, Computer Science
+        caption: Sept.23-present
+        # quote: >
+        #   Short institution or course description (optional)
+        # description: | # this will include new lines to allow paragraphs
+  - title: My Skills & A Little More About Me :)
     layout: text
-    content: | # this will include new lines to allow paragraphs
-      This is where you can write a little more about yourself. You could title this section **Interests** and include some of your other interests.
+    content:
+      'Language: C++, Python, Java, JavaScript, HTML5, CSS
+      GIS: ArcGIS Pro, Arc GIS, QGIS, Google Earth
+      Data: SQL, Mongo DB, MATLAB, SPSS, Tableau, R
+      Others: Adobe software (Photoshop, Lightroom, Acrobat)
 
-      Or you could title it **Skills** and write a bit more about things that make you more desirable, like *leadership* or *teamwork*
+      I'm presently in my junior year pursuing dual majors in Cartography & GIS and Computer Science at the University of Wisconsin-Madison. 
+      I'm keen on leveraging my background in GIS analysis and software development to work on projects that sit at the intersection of both fields. 
+      My academic background arms me with the skills to analyze spatial data intricately and develop robust computer programs.
+      I'm looking forward to finding an internship work in summer 2024. 
+      
 
 # Footer
 footer_show_references: true
