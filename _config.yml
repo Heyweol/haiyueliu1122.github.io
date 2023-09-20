@@ -95,7 +95,6 @@ content:
           •	Assisted to develop algorithms to build and refine the language model.
           •	Managed large computational resources necessary for training large models.
           •	Trained the model using state-of-the-art deep learning frameworks.
-    content:
       - layout: right
         title: Spatial Computing and Data Mining Lab at University of Wisconsin-Madison                         
         sub_title: Research Assistant 
@@ -107,7 +106,6 @@ content:
           •	Mapped and Completed GIS analysis Potential Impact of Florida SB264 (Agricultural Land, Critical Infrastructure and Military Installation Zone).
           •	Leveraged Python for Machine Learning in Research.
           •	Creation of an interactive online map presentation web page for the results of the study
-      content:
       - layout: right
         title: Koop Lab at Northern Illinois University, Biology Department                         
         sub_title: Research Assistant 
