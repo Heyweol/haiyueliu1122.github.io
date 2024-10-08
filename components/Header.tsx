@@ -26,10 +26,10 @@ export function Header() {
       transition={{ type: 'spring', stiffness: 300, damping: 30 }}
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 className="text-2xl font-bold">My Personal Timeline</h1>
+        <h1 className="text-2xl font-bold">Haiyue (Morgan) Liu</h1>
         <nav>
           <Button variant="ghost" className="mr-2">Resume</Button>
-          <Button variant="ghost">Projects</Button>
+          {/* <Button variant="ghost">Projects</Button> */}
         </nav>
       </div>
     </motion.header>
