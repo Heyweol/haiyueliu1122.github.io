@@ -1,6 +1,6 @@
 1:HL["/heyweol.github.io/_next/static/media/a34f9d1faa5f3315-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
 2:HL["/heyweol.github.io/_next/static/css/f151f913d6f9608b.css","style"]
-0:["PN6kcY2LUxb_Mj7eddh3m",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L3",[[["$","link","0",{"rel":"stylesheet","href":"/heyweol.github.io/_next/static/css/f151f913d6f9608b.css","precedence":"next"}]],"$L4"]]]]
+0:["Z1EC9eE-f_zyNtF62ocxZ",[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],"$L3",[[["$","link","0",{"rel":"stylesheet","href":"/heyweol.github.io/_next/static/css/f151f913d6f9608b.css","precedence":"next"}]],"$L4"]]]]
 5:I{"id":9205,"chunks":["185:static/chunks/app/layout-b1d557c37fdaeecc.js"],"name":"ThemeProvider","async":false}
 6:I{"id":1443,"chunks":["272:static/chunks/webpack-52411d53df7f4251.js","971:static/chunks/fd9d1056-cd9a5b71416a037e.js","864:static/chunks/864-b61a1bab6b9632a7.js"],"name":"","async":false}
 7:I{"id":8639,"chunks":["272:static/chunks/webpack-52411d53df7f4251.js","971:static/chunks/fd9d1056-cd9a5b71416a037e.js","864:static/chunks/864-b61a1bab6b9632a7.js"],"name":"","async":false}
