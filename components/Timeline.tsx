@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'fra
 import { Card } from '@/components/ui/card';
 import { useRef, useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button'; // Add this import
+import { useInView } from 'react-intersection-observer';
 
 const timelineEvents = [
   { year: 2020, title: 'Started My Journey', description: 'Began learning web development', details: 'Enrolled in online courses and started building small projects to gain hands-on experience.' },
@@ -19,12 +20,12 @@ export function Timeline({ setCurrentFocus }) {
   const [expandedIndex, setExpandedIndex] = useState(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start end", "end start"]
+    offset: ["start center", "end center"]
   });
 
   const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
+    stiffness: 200,
+    damping: 40,
     restDelta: 0.001
   });
 
@@ -67,104 +68,104 @@ export function Timeline({ setCurrentFocus }) {
       />
       
       <div className="space-y-40">
-        {timelineEvents.map((event, index) => (
-          <motion.div
-            key={index}
-            className="relative"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.8 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-          >
+        {timelineEvents.map((event, index) => {
+          const [ref, inView] = useInView({
+            threshold: 0.5,
+            triggerOnce: false
+          });
+
+          return (
             <motion.div
-              className="absolute left-4 top-6 w-3 h-3 bg-primary rounded-full transform -translate-x-1/2"
-              style={{
-                scale: useTransform(
-                  smoothProgress,
-                  [index / timelineEvents.length, (index + 1) / timelineEvents.length],
-                  [0.5, 1.5]
-                )
+              key={index}
+              ref={ref}
+              className="relative"
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ 
+                opacity: inView ? 1 : 0.6, 
+                y: 0, 
+                scale: inView ? 1 : 0.95 
               }}
-            />
-            
-            <motion.div
-              style={{
-                scale: useTransform(
-                  smoothProgress,
-                  [
-                    (index - 0.5) / timelineEvents.length,
-                    index / timelineEvents.length,
-                    (index + 0.5) / timelineEvents.length
-                  ],
-                  [0.9, 1, 0.9]
-                ),
-                opacity: useTransform(
-                  smoothProgress,
-                  [
-                    (index - 0.5) / timelineEvents.length,
-                    index / timelineEvents.length,
-                    (index + 0.5) / timelineEvents.length
-                  ],
-                  [0.6, 1, 0.6]
-                )
-              }}
+              transition={{ duration: 0.3, type: "spring", stiffness: 300, damping: 30 }}
             >
-              <Card 
-                className={`ml-12 p-6 transition-all duration-300 cursor-pointer
-                  ${activeIndex === index ? 'shadow-lg ring-2 ring-primary' : ''}
-                `}
-                onClick={() => handleCardClick(index)}
+              <motion.div
+                style={{
+                  scale: useTransform(
+                    smoothProgress,
+                    [
+                      (index - 0.5) / timelineEvents.length,
+                      index / timelineEvents.length,
+                      (index + 0.5) / timelineEvents.length
+                    ],
+                    [0.9, 1, 0.9]
+                  ),
+                  opacity: useTransform(
+                    smoothProgress,
+                    [
+                      (index - 0.5) / timelineEvents.length,
+                      index / timelineEvents.length,
+                      (index + 0.5) / timelineEvents.length
+                    ],
+                    [0.6, 1, 0.6]
+                  )
+                }}
               >
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 10 }}
+                <Card 
+                  className={`ml-12 p-6 transition-all duration-300 cursor-pointer
+                    ${inView ? 'shadow-lg ring-2 ring-primary' : ''}
+                  `}
+                  onClick={() => handleCardClick(index)}
                 >
-                  <h3 className="text-2xl font-semibold mb-2">{event.year}</h3>
-                  <h4 className="text-xl font-medium mb-2">{event.title}</h4>
-                  <p className="text-gray-600 dark:text-gray-300">{event.description}</p>
-                  <AnimatePresence>
-                    {expandedIndex === index && (
-                      <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.3 }}
-                        className="mt-4"
-                      >
-                        <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
-                          {event.details}
-                        </p>
-                        {event.projectUrl && (
-                          <>
-                            <div className="mt-4 aspect-video w-full">
-                              <iframe
-                                src={event.projectUrl}
-                                className="w-full h-full border-0 rounded-md"
-                                title={`Project: ${event.title}`}
-                                allowFullScreen
-                              />
-                            </div>
-                            <div className="mt-4 text-center">
-                              <Button
-                                onClick={(e) => {
-                                  e.stopPropagation(); // Prevent card from collapsing
-                                  window.open(event.projectUrl, '_blank');
-                                }}
-                                className="bg-primary text-primary-foreground hover:bg-primary/90"
-                              >
-                                Open the Project Site
-                              </Button>
-                            </div>
-                          </>
-                        )}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </motion.div>
-              </Card>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 10 }}
+                  >
+                    <h3 className="text-2xl font-semibold mb-2">{event.year}</h3>
+                    <h4 className="text-xl font-medium mb-2">{event.title}</h4>
+                    <p className="text-gray-600 dark:text-gray-300">{event.description}</p>
+                    <AnimatePresence>
+                      {expandedIndex === index && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.3 }}
+                          className="mt-4"
+                        >
+                          <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+                            {event.details}
+                          </p>
+                          {event.projectUrl && (
+                            <>
+                              <div className="mt-4 aspect-video w-full">
+                                <iframe
+                                  src={event.projectUrl}
+                                  className="w-full h-full border-0 rounded-md"
+                                  title={`Project: ${event.title}`}
+                                  allowFullScreen
+                                />
+                              </div>
+                              <div className="mt-4 text-center">
+                                <Button
+                                  onClick={(e) => {
+                                    e.stopPropagation(); // Prevent card from collapsing
+                                    window.open(event.projectUrl, '_blank');
+                                  }}
+                                  className="bg-primary text-primary-foreground hover:bg-primary/90"
+                                >
+                                  Open the Project Site
+                                </Button>
+                              </div>
+                            </>
+                          )}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+                </Card>
+              </motion.div>
             </motion.div>
-          </motion.div>
-        ))}
+          );
+        })}
       </div>
 
       <div className="mt-40 pt-20 border-t border-gray-200 dark:border-gray-700">

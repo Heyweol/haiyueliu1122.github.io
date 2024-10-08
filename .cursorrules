@@ -1,1 +1,6 @@
 We are building with nextjs and tailwindcss.
+
+We will deploy to github pages. So avoid dynamic components that require server side rendering.
+If you see any components that are not static, please convert them to static and tell me.
+
+
