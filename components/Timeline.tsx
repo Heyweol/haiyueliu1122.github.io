@@ -77,12 +77,12 @@ const timelineEvents = [
 
 // Update this constant to match the number of timeline events
 const catImages = [
-  { normal: '/images/cat-face-1.png', expanded: '/images/cat-face-3.png' },
-  { normal: '/images/cat-face-1.png', expanded: '/images/cat-face-2.png' },
-  { normal: '/images/cat-face-1.png', expanded: '/images/cat-face-2.png' },
-  { normal: '/images/cat-face-1.png', expanded: '/images/cat-face-2.png' },
-  { normal: '/images/cat-face-1.png', expanded: '/images/cat-face-2.png' },
-  { normal: '/images/cat-face-1.png', expanded: '/images/cat-face-2.png' },
+  { normal: '/images/2.png', expanded: '/images/1.png' },
+  { normal: '/images/2.png', expanded: '/images/1.png' },
+  { normal: '/images/2.png', expanded: '/images/1.png' },
+  { normal: '/images/2.png', expanded: '/images/1.png' },
+  { normal: '/images/2.png', expanded: '/images/1.png' },
+  { normal: '/images/2.png', expanded: '/images/1.png' },
 ];
 
 // Add a fallback image
@@ -143,7 +143,7 @@ export function Timeline({ setCurrentFocus, setExpandedIndex }) {
   };
 
   const cat1Images = [
-    "cat-face-1.png",
+    "isa.jpg",
     "cat-face-2.png",
     "cat-face-3.png",
     "cat-face-4.png"
