@@ -3,10 +3,10 @@
 import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'framer-motion';
 import { Card } from '@/components/ui/card';
 import { useRef, useEffect, useState } from 'react';
-import { Button } from '@/components/ui/button'; // Add this import
+import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-import { FaGithub, FaLinkedin } from 'react-icons/fa'; // Add this import
-import { Chatbot } from '@/components/Chatbot'; // Add this import
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { Chatbot } from '@/components/Chatbot';
 
 const timelineEvents = [
   { 
@@ -87,19 +87,24 @@ const catImages = [
 // Add a fallback image
 const fallbackImage = '/images/cat-face-1.png';
 
-export function Timeline({ setCurrentFocus, setExpandedIndex }) {
+interface TimelineProps {
+  setCurrentFocus: (focus: string) => void;
+  setExpandedIndex?: (index: number | null) => void;
+}
+
+export function Timeline({ setCurrentFocus, setExpandedIndex }: TimelineProps) {
   const containerRef = useRef(null);
   const revealRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [localExpandedIndex, setLocalExpandedIndex] = useState<number | null>(null); // Local state
+  const [localExpandedIndex, setLocalExpandedIndex] = useState<number | null>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
   });
 
   const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 200,  // Increased from 100
-    damping: 20,     // Decreased from 30
+    stiffness: 200,
+    damping: 20,
     restDelta: 0.001
   });
 
@@ -122,9 +127,7 @@ export function Timeline({ setCurrentFocus, setExpandedIndex }) {
 
   useEffect(() => {
     const unsubscribe = smoothProgress.onChange(v => {
-      // Clamp the value between 0 and 1
       const clampedValue = Math.max(0, Math.min(1, v));
-      // Adjust index calculation to ensure first and last cards can be highlighted
       const index = Math.round(clampedValue * (timelineEvents.length - 1));
       setActiveIndex(index);
       setCurrentFocus(timelineEvents[index].title);
@@ -133,7 +136,7 @@ export function Timeline({ setCurrentFocus, setExpandedIndex }) {
     return () => unsubscribe();
   }, [smoothProgress, setCurrentFocus]);
 
-  const handleCardClick = (index) => {
+  const handleCardClick = (index: number) => { // Specify the type of index
     const newIndex = localExpandedIndex === index ? null : index;
     setLocalExpandedIndex(newIndex);
     if (setExpandedIndex) {
@@ -141,26 +144,8 @@ export function Timeline({ setCurrentFocus, setExpandedIndex }) {
     }
   };
 
-  const cat1Images = [
-    "isa.jpgng",
-    "cat-face-2.png",
-    "cat-face-3.png",
-    "cat-face-4.png"
-  ];
-
-  const cat2Images = [
-    "cat-face-1.png",
-    "cat-face-2.png",
-    "cat-face-3.png",
-    "cat-face-4.png"
-  ];
-
   return (
     <div ref={containerRef} className="relative mx-auto py-20">
-      {/* Pass the same expandedIndex to both Cat components */}
-      {/* <Cat side="left" currentFocus={timelineEvents[activeIndex].title} expandedIndex={localExpandedIndex} faceImages={cat1Images} /> */}
-      {/* <Cat side="right" currentFocus={timelineEvents[activeIndex].title} expandedIndex={localExpandedIndex} faceImages={cat2Images} /> */}
-      
       <div className="space-y-40">
         {timelineEvents.map((event, index) => (
           <motion.div key={index} className="relative">
@@ -285,7 +270,7 @@ export function Timeline({ setCurrentFocus, setExpandedIndex }) {
               
               {/* Add GitHub and LinkedIn icons here */}
               <div className="flex space-x-2">
-                <a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">
+                <a href="https://github.com/heyweol" target="_blank" rel="noopener noreferrer">
                   <FaGithub className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100" size={24} />
                 </a>
                 <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
@@ -297,7 +282,7 @@ export function Timeline({ setCurrentFocus, setExpandedIndex }) {
         </motion.div>
       </div>
 
-      <Chatbot /> {/* Add the Chatbot component here */}
+      <Chatbot />
     </div>
   );
 }

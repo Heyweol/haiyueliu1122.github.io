@@ -10,6 +10,7 @@ export default function Home() {
   const ref = useRef(null);
   const inView = useInView(ref);
   const [currentFocus, setCurrentFocus] = useState('Started My Journey');
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null); // Added state for expandedIndex
 
   useEffect(() => {
     if (inView) {
@@ -22,7 +23,6 @@ export default function Home() {
       <Header />
       <div className="container mx-auto px-4 py-8 pt-24 relative">
         {/* Removed Cat components */}
-        {/* <Cat side="left" currentFocus={currentFocus} /> */}
         <motion.div
           ref={ref}
           animate={controls}
@@ -34,7 +34,7 @@ export default function Home() {
           transition={{ duration: 0.5 }}
           className="w-full max-w-2xl mx-auto"
         >
-          <Timeline setCurrentFocus={setCurrentFocus} />
+          <Timeline setCurrentFocus={setCurrentFocus} setExpandedIndex={setExpandedIndex} /> {/* Updated to include setExpandedIndex */}
         </motion.div>
         {/* <Cat side="right" currentFocus={currentFocus} /> */}
       </div>
