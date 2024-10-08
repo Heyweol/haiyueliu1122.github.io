@@ -3,7 +3,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, useAnimation, useInView } from 'framer-motion';
 import { Timeline } from '@/components/Timeline';
-import { Cat } from '@/components/Cat';
 import { Header } from '@/components/Header';
 
 export default function Home() {
@@ -22,7 +21,8 @@ export default function Home() {
     <div className="min-h-screen">
       <Header />
       <div className="container mx-auto px-4 py-8 pt-24 relative">
-        <Cat side="left" currentFocus={currentFocus} />
+        {/* Removed Cat components */}
+        {/* <Cat side="left" currentFocus={currentFocus} /> */}
         <motion.div
           ref={ref}
           animate={controls}
@@ -36,7 +36,7 @@ export default function Home() {
         >
           <Timeline setCurrentFocus={setCurrentFocus} />
         </motion.div>
-        <Cat side="right" currentFocus={currentFocus} />
+        {/* <Cat side="right" currentFocus={currentFocus} /> */}
       </div>
     </div>
   );

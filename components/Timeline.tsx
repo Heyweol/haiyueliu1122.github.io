@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform, useSpring, AnimatePresence } from 'fra
 import { Card } from '@/components/ui/card';
 import { useRef, useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button'; // Add this import
-import { Cat } from "@/components/Cat";
 import Image from 'next/image';
 import { FaGithub, FaLinkedin } from 'react-icons/fa'; // Add this import
 import { Chatbot } from '@/components/Chatbot'; // Add this import
@@ -143,7 +142,7 @@ export function Timeline({ setCurrentFocus, setExpandedIndex }) {
   };
 
   const cat1Images = [
-    "isa.jpg",
+    "isa.jpgng",
     "cat-face-2.png",
     "cat-face-3.png",
     "cat-face-4.png"
@@ -159,8 +158,8 @@ export function Timeline({ setCurrentFocus, setExpandedIndex }) {
   return (
     <div ref={containerRef} className="relative mx-auto py-20">
       {/* Pass the same expandedIndex to both Cat components */}
-      <Cat side="left" currentFocus={timelineEvents[activeIndex].title} expandedIndex={localExpandedIndex} faceImages={cat1Images} />
-      <Cat side="right" currentFocus={timelineEvents[activeIndex].title} expandedIndex={localExpandedIndex} faceImages={cat2Images} />
+      {/* <Cat side="left" currentFocus={timelineEvents[activeIndex].title} expandedIndex={localExpandedIndex} faceImages={cat1Images} /> */}
+      {/* <Cat side="right" currentFocus={timelineEvents[activeIndex].title} expandedIndex={localExpandedIndex} faceImages={cat2Images} /> */}
       
       <div className="space-y-40">
         {timelineEvents.map((event, index) => (
