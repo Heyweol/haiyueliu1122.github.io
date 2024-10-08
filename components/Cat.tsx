@@ -1,4 +1,3 @@
-
 "use client"
 
 import { useState, useRef } from 'react';
@@ -6,12 +5,19 @@ import { motion, useDragControls } from 'framer-motion';
 import { Cat as CatIcon } from 'lucide-react';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
+
 interface CatProps {
-  side: 'left' | 'right';
+  side: string;
   currentFocus: string;
+  expandedIndex: number | null;
+  faceImages: string[]; // Add this prop
 }
 
-export function Cat({ side, currentFocus }: CatProps) {
+export function Cat({ side, currentFocus, expandedIndex, faceImages }: CatProps) {
+  // Ensure expandedIndex is within the valid range
+  const isValidIndex = expandedIndex !== null && expandedIndex >= 0 && expandedIndex < faceImages.length;
+  const currentCatImage = isValidIndex ? faceImages[expandedIndex] : "cat-face-1.png";
+
   const [isOpen, setIsOpen] = useState(false);
   const dragControls = useDragControls();
   const wasDragged = useRef(false);
@@ -55,7 +61,7 @@ export function Cat({ side, currentFocus }: CatProps) {
         }}
       >
         <div className={`cat-walk-${side}`}>
-          <CatIcon className="w-12 h-12 md:w-16 md:h-16" />
+          <img src={`/images/${currentCatImage}`} alt="Cat Face" className="w-12 h-12 md:w-16 md:h-16" />
         </div>
       </motion.div>
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
