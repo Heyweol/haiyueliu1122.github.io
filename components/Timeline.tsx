@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Chatbot } from '@/components/Chatbot';
+import { ContactCircle } from '@/components/ContactCircle';
 
 const timelineEvents = [
   { 
@@ -146,6 +147,7 @@ export function Timeline({ setCurrentFocus, setExpandedIndex }: TimelineProps) {
 
   return (
     <div ref={containerRef} className="relative mx-auto py-20">
+      <ContactCircle />
       <div className="space-y-40">
         {timelineEvents.map((event, index) => (
           <motion.div key={index} className="relative">
@@ -273,7 +275,7 @@ export function Timeline({ setCurrentFocus, setExpandedIndex }: TimelineProps) {
                 <a href="https://github.com/heyweol" target="_blank" rel="noopener noreferrer">
                   <FaGithub className="text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-gray-100" size={24} />
                 </a>
-                <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/morgan-liu-b056b3262/" target="_blank" rel="noopener noreferrer">
                   <FaLinkedin className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-200" size={24} />
                 </a>
               </div>

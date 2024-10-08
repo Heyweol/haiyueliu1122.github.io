@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run build",
+    "build": "next build",
+    "export": "next export",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "gh-pages -d out"
+    "deploy": "npm run build && touch out/.nojekyll && gh-pages -d out -t true"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
