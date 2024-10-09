@@ -25,7 +25,7 @@ export function Chatbot() {
         ? { message, conversation_id: conversationId }
         : { message };
 
-      const response = await fetch('https://08582fd1-0dd3-40ff-8b8b-73ccfed86e64-00-x10n427pqnry.kirk.replit.dev/api/chat', {
+      const response = await fetch('https://chat-with-morgan.replit.app/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -117,7 +117,7 @@ export function Chatbot() {
             onChange={(e) => setMessage(e.target.value)}
             onKeyPress={handleKeyPress} // Add key press handler
             className="border rounded p-2 mt-2 w-full"
-            placeholder="Type a message..."
+            placeholder="Chat with me!"
           />
           <button onClick={handleSendMessage} className="bg-blue-500 text-white rounded p-2 mt-2 w-full hover:bg-blue-600 transition-colors">
             Send
