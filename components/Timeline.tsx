@@ -153,13 +153,6 @@ export function Timeline({ setCurrentFocus, setExpandedIndex }: TimelineProps) {
           <motion.div key={index} className="relative">
             <motion.div
               className="absolute left-0 top-6 w-12 h-12 transform -translate-x-1/2"
-              style={{
-                scale: useTransform(
-                  smoothProgress,
-                  [index / timelineEvents.length, (index + 1) / timelineEvents.length],
-                  [0.8, 1.2]
-                )
-              }}
             >
               <Image
                 src={
@@ -176,15 +169,6 @@ export function Timeline({ setCurrentFocus, setExpandedIndex }: TimelineProps) {
             
             <motion.div
               style={{
-                scale: useTransform(
-                  smoothProgress,
-                  [
-                    (index - 0.2) / timelineEvents.length,
-                    index / timelineEvents.length,
-                    (index + 0.2) / timelineEvents.length
-                  ],
-                  [0.97, 1, 0.97]
-                ),
                 opacity: 1
               }}
             >

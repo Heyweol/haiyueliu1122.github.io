@@ -28,7 +28,7 @@ export function Header() {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <h1 className="text-2xl font-bold">Haiyue (Morgan) Liu</h1>
         <nav>
-          <Button variant="ghost" className="mr-2">Resume</Button>
+          <Button variant="ghost" className="mr-2" onClick={() => window.open('/resume-Haiyue-Liu.pdf', '_blank')}>Resume</Button>
           {/* <Button variant="ghost">Projects</Button> */}
         </nav>
       </div>
