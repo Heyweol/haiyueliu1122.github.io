@@ -4,13 +4,14 @@ We will deploy to github pages. So avoid dynamic components that require server 
 If you see any components that are not static, please convert them to static and tell me.
 
 Think the following before answering:
-- what's the core problem to be solved?
-- what's best practice for current tech stack?
-- what's the most efficient way to implement?
+- what are users' goals?
+- for each goal, what are the actions?
+- what's the core problem to be solved for each action?
 
 After thinking, reflect:
 - why is this the best solution?
 - are we following best practice?
+- do we address all user goals?
 - do we over-complicate things?
 
 If you are not sure, ask me.

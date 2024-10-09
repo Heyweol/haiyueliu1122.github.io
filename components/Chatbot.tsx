@@ -74,30 +74,48 @@ export function Chatbot() {
     }
   };
 
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      handleSendMessage();
+    }
+  };
+
   return (
     <div 
       ref={chatbotRef}
-      className="fixed bottom-4 right-4 bg-inherit" // Use bg-inherit for consistent background color
+      className="fixed bottom-4 right-4 bg-slate-400 shadow-lg rounded-lg" // Set a solid background for the chat window
       draggable
       onDragStart={handleDragStart}
       onDragOver={handleDragOver}
       onDrop={handleDrop}
     >
-      <FaRobot 
-        className="text-4xl cursor-pointer" 
+      <img 
+        src={isOpen ? '/images/face.jpg' : '/images/wave.jpg'} // Use different images based on isOpen state
+        alt="Chat Icon"
+        className="w-16 h-16 cursor-pointer rounded-full" // Make the avatar rounded
         onClick={() => setIsOpen(!isOpen)} // Toggle chat window visibility
       />
       {isOpen && ( // Render chat window only if isOpen is true
-        <div className="bg-inherit p-4 rounded-lg shadow-lg mt-2 w-64">
+        <div className="p-4 mt-2 w-64">
           <div className="flex flex-col h-64 overflow-y-auto">
             {chatHistory.map((msg, index) => (
-              <p key={index} className="text-sm mb-2">{msg}</p>
+              <div 
+                key={index} 
+                className={`mb-2 p-2 rounded-lg max-w-xs ${
+                  msg.startsWith('You:') 
+                  ? 'bg-blue-500 text-white self-end' // User message bubble
+                  : 'bg-gray-300 text-black self-start' // Bot message bubble
+                }`}
+              >
+                {msg.replace(/^You: |^Bot: /, '')}
+              </div>
             ))}
           </div>
           <input
             type="text"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
+            onKeyPress={handleKeyPress} // Add key press handler
             className="border rounded p-2 mt-2 w-full"
             placeholder="Type a message..."
           />
