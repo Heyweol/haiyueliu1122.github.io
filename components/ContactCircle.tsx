@@ -22,10 +22,10 @@ export function ContactCircle() {
         {/* Central image */}
         <div className="absolute inset-0 flex items-center justify-center">
           <Image
-            src="/images/me-with-cats.jpg"
+            src="/images/twocats.png"
             alt="Morgan with cats"
-            width={250}
-            height={250}
+            width={350}
+            height={350}
             className="rounded-full"
           />
         </div>

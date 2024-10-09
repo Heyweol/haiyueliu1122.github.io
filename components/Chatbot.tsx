@@ -83,25 +83,25 @@ export function Chatbot() {
   return (
     <div 
       ref={chatbotRef}
-      className="fixed bottom-4 right-4 bg-slate-400 shadow-lg rounded-lg" // Set a solid background for the chat window
+      className={`fixed bottom-4 right-4 bg-slate-400 shadow-lg rounded-lg ${isOpen ? 'w-96' : 'w-16'}`} // Increased width when open
       draggable
       onDragStart={handleDragStart}
       onDragOver={handleDragOver}
       onDrop={handleDrop}
     >
       <img 
-        src={isOpen ? '/images/face.jpg' : '/images/wave.jpg'} // Use different images based on isOpen state
+        src={isOpen ? '/images/face.jpg' : '/images/wave.jpg'}
         alt="Chat Icon"
-        className="w-16 h-16 cursor-pointer rounded-full" // Make the avatar rounded
-        onClick={() => setIsOpen(!isOpen)} // Toggle chat window visibility
+        className={`cursor-pointer rounded-full ${isOpen ? 'w-16 h-16 mb-2' : 'w-16 h-16'}`} // Adjusted image size
+        onClick={() => setIsOpen(!isOpen)}
       />
-      {isOpen && ( // Render chat window only if isOpen is true
-        <div className="p-4 mt-2 w-64">
-          <div className="flex flex-col h-64 overflow-y-auto">
+      {isOpen && (
+        <div className="p-4 w-full"> 
+          <div className="flex flex-col h-80 overflow-y-auto mb-4"> 
             {chatHistory.map((msg, index) => (
               <div 
                 key={index} 
-                className={`mb-2 p-2 rounded-lg max-w-xs ${
+                className={`mb-2 p-2 rounded-lg max-w-[80%] ${
                   msg.startsWith('You:') 
                   ? 'bg-blue-500 text-white self-end' // User message bubble
                   : 'bg-gray-300 text-black self-start' // Bot message bubble
@@ -116,10 +116,10 @@ export function Chatbot() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
             onKeyPress={handleKeyPress} // Add key press handler
-            className="border rounded p-2 mt-2 w-full"
+            className="border rounded p-2 w-full mb-2" // Added margin-bottom
             placeholder="Chat with me!"
           />
-          <button onClick={handleSendMessage} className="bg-blue-500 text-white rounded p-2 mt-2 w-full hover:bg-blue-600 transition-colors">
+          <button onClick={handleSendMessage} className="bg-blue-500 text-white rounded p-2 w-full hover:bg-blue-600 transition-colors">
             Send
           </button>
         </div>
