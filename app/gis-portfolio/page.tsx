@@ -8,6 +8,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { cn } from "@/lib/utils"
 
+// Add type definitions
+type AnalysisContentItem = {
+  type: 'text' | 'image';
+  content: string;
+  thumbnail: string;
+}
+
 export default function GISPortfolio() {
   const [showFullIntro, setShowFullIntro] = useState(false)
   const [selectedStudentWork, setSelectedStudentWork] = useState(null)
@@ -50,22 +57,11 @@ export default function GISPortfolio() {
     }
   ]
 
-  const analysisContent = [
+  const analysisContent: AnalysisContentItem[] = [
     {
       type: 'text',
-      content: (
-        <p className="text-muted-foreground space-y-4">
-          <span className="block mb-4">
-            As an experienced geospatial data analyst, I conducted comprehensive GIS analysis and created detailed reports for a law firm, examining geographic restrictions affecting home purchases for Asian residents in Florida under SB264.
-          </span>
-          <span className="block mb-4">
-            My responsibilities included collecting geographic data, analyzing buffer zones around restricted areas, creating illustrative maps, and drawing reliable conclusions. The analysis revealed significant reductions in available land for individuals targeted by the bill.
-          </span>
-          <span className="block">
-            This report provided crucial insights into SB264&apos;s effects and served as key evidence in the firm&apos;s appeal process.
-          </span>
-        </p>
-      ),
+      content: 'As an experienced geospatial data analyst, I conducted comprehensive GIS analysis and created detailed reports for a law firm, examining geographic restrictions affecting home purchases for Asian residents in Florida under SB264.',
+      thumbnail: '/images/gis-page-text-thumbnail.png'
     },
     {
       type: 'image',
@@ -335,7 +331,17 @@ export default function GISPortfolio() {
                   <h3 className="text-xl font-semibold mb-4">Analysis Overview</h3>
                   <div className="mb-6">
                     {selectedAnalysisContent === 0 ? (
-                      analysisContent[0].content
+                      <p className="text-muted-foreground space-y-4">
+                        <span className="block mb-4">
+                          As an experienced geospatial data analyst, I conducted comprehensive GIS analysis and created detailed reports for a law firm, examining geographic restrictions affecting home purchases for Asian residents in Florida under SB264.
+                        </span>
+                        <span className="block mb-4">
+                          My responsibilities included collecting geographic data, analyzing buffer zones around restricted areas, creating illustrative maps, and drawing reliable conclusions. The analysis revealed significant reductions in available land for individuals targeted by the bill.
+                        </span>
+                        <span className="block">
+                          This report provided crucial insights into SB264&apos;s effects and served as key evidence in the firm&apos;s appeal process.
+                        </span>
+                      </p>
                     ) : (
                       <div className="relative aspect-[4/3] w-full">
                         <Image
