@@ -26,15 +26,13 @@ export default function RemoteSensingProject() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-4xl font-bold mb-6">Remote Sensing Analysis</h1>
-          
           <Card className="mb-8">
             <CardContent className="p-6">
               <div className="space-y-6">
                 <div className="relative aspect-[16/9] w-full">
                   <Image
                     src="/images/more/Slide1.JPG"
-                    alt="Remote Sensing Analysis"
+                    alt="Spatial Analysis"
                     fill
                     className="object-contain rounded-lg"
                     priority

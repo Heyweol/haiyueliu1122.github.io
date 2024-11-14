@@ -26,7 +26,7 @@ export default function GISPortfolio() {
     {
       id: 1,
       title: "NYC Crime Analysis",
-      timeFrame: "Fall 2023",
+      timeFrame: "2023",
       description: "Comprehensive spatial analysis of crime patterns in New York City",
       details: [
      ],
@@ -36,7 +36,7 @@ export default function GISPortfolio() {
     {
       id: 2,
       title: "Spatial Analysis Project",
-      timeFrame: "Fall 2023",
+      timeFrame: "2023",
       description: "Advanced spatial analysis techniques and visualization",
       details: [
 
@@ -46,8 +46,8 @@ export default function GISPortfolio() {
     },
     {
       id: 3,
-      title: "Remote Sensing Analysis",
-      timeFrame: "Summer 2023",
+      title: "Spatial Analysis",
+      timeFrame: "2023",
       description: "Satellite imagery analysis and land use classification",
       details: [
 
@@ -139,9 +139,9 @@ export default function GISPortfolio() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="grid grid-cols-1 md:grid-cols-2 gap-8 h-full items-center"
+                className="grid grid-cols-1 md:grid-cols-3 gap-8 h-full items-center"
               >
-                <div className="flex items-start gap-8">
+                <div className="flex items-start gap-8 md:col-span-2">
                   <div className="relative shrink-0">
                     <Image
                       src="/images/gis-page-avatar.png"
@@ -153,7 +153,7 @@ export default function GISPortfolio() {
                     />
                   </div>
                   
-                  <motion.div className="flex flex-col gap-4 flex-1">
+                  <motion.div className="flex flex-col gap-4 flex-1 max-w-3xl">
                     <h1 className="text-4xl font-bold text-white drop-shadow-[0_1.2px_1.2px_rgba(0,0,0,0.8)]">
                       GIS Portfolio
                     </h1>
@@ -171,18 +171,18 @@ export default function GISPortfolio() {
                             initial={{ opacity: 0, height: 0 }}
                             animate={{ opacity: 1, height: "auto" }}
                             exit={{ opacity: 0, height: 0 }}
-                            className="space-y-4 mt-4"
+                            className="space-y-2 mt-2"
                           >
-                            <p className="leading-relaxed">
+                            <p className="text-sm leading-relaxed text-white/90">
                               I major in Computer Science, and Cartography & Geographic Information Systems at University of Wisconsin-Madison in my junior year.
                             </p>
-                            <p className="leading-relaxed">
+                            <p className="text-sm leading-relaxed text-white/90">
                               I am a Research Assistant at the Spatial Computing and Data Mining Lab in UWM Geography Department, where I analyze satellite imagery of central crop areas, manage cloud-based databases, and build machine learning models for crop yield predictions and geographic variation analysis.
                             </p>
-                            <p className="leading-relaxed">
+                            <p className="text-sm leading-relaxed text-white/90">
                               As an experienced geospatial data analyst, I have also conducted comprehensive GIS analysis and created illustrative reports for a law firm, highlighting geographic restrictions impacting home purchases for Asian residents in Florida under SB264. And my findings that became key evidence in their appeal.
                             </p>
-                            <p className="leading-relaxed">
+                            <p className="text-sm leading-relaxed text-white/90">
                               With my programming background, I also expertise in developing interactive online geo-visualization platforms.
                             </p>
                           </motion.div>
