@@ -13,35 +13,41 @@ export default function GISPortfolio() {
   const [selectedStudentWork, setSelectedStudentWork] = useState(null)
   const [isExpanded, setIsExpanded] = useState(false)
   const [selectedAnalysisContent, setSelectedAnalysisContent] = useState(0)
+  const [selectedWebsiteImage, setSelectedWebsiteImage] = useState(0)
 
   const studentWorkDetails = [
     {
       id: 1,
-      title: "Project 1",
-      timeFrame: "Spring 2023",
-      description: "Description of Project 1",
-      details: ["Used ArcGIS Pro", "Conducted spatial analysis", "Created thematic maps"],
-      image: "/images/2.png",
-      expandedImage: "/images/1.png"
+      title: "NYC Crime Analysis",
+      timeFrame: "Fall 2023",
+      description: "Comprehensive spatial analysis of crime patterns in New York City",
+      details: [
+     ],
+      image: "/images/nyc-crime/1.kernel density 2023.png",
+      expandedImage: "/images/nyc-crime/5.hot spot similarity.png"
     },
     {
       id: 2,
-      title: "Project 2",
-      timeFrame: "Fall 2022",
-      description: "Description of Project 2",
-      details: ["Utilized QGIS", "Performed network analysis", "Developed interactive web maps"],
-      image: "/images/2.png",
-      expandedImage: "/images/1.png"
+      title: "Spatial Analysis Project",
+      timeFrame: "Fall 2023",
+      description: "Advanced spatial analysis techniques and visualization",
+      details: [
+
+      ],
+      image: "/images/CW2/tn.png",
+      expandedImage: "/images/CW2/Slide1.JPG"
     },
     {
       id: 3,
-      title: "Project 3",
-      timeFrame: "Summer 2022",
-      description: "Description of Project 3",
-      details: ["Employed remote sensing techniques", "Analyzed satellite imagery", "Created land use classification maps"],
-      image: "/images/2.png",
-      expandedImage: "/images/1.png"
-    },
+      title: "Remote Sensing Analysis",
+      timeFrame: "Summer 2023",
+      description: "Satellite imagery analysis and land use classification",
+      details: [
+
+      ],
+      image: "/images/more/tn1.png",
+      expandedImage: "/images/more/Slide1.JPG"
+    }
   ]
 
   const analysisContent = [
@@ -75,6 +81,33 @@ export default function GISPortfolio() {
       type: 'image',
       content: '/images/gis-page-florida3.png',
       thumbnail: '/images/gis-page-florida3.png'
+    }
+  ]
+
+  const websiteContent = [
+    {
+      type: 'image',
+      content: '/images/gis-page-usda1.png',
+      thumbnail: '/images/gis-page-usda1.png',
+      description: 'This is the interactive geo-visualization website sponsored by USDA.'
+    },
+    {
+      type: 'image',
+      content: '/images/gis-page-usda2.png',
+      thumbnail: '/images/gis-page-usda2.png',
+      description: 'Allow user run machine learning model online'
+    },
+    {
+      type: 'image',
+      content: '/images/gis-page-usda3.png',
+      thumbnail: '/images/gis-page-usda3.png',
+      description: 'An intuitively clear color design for map'
+    },
+    {
+      type: 'video',
+      content: '/video/gis-page-1.mp4',
+      thumbnail: '/images/gis-page-usda1.png',
+      description: 'Download map and users can design based on their preference'
     }
   ]
 
@@ -180,41 +213,101 @@ export default function GISPortfolio() {
             <CardContent className="p-6">
               <h2 className="text-2xl font-bold mb-4">Paid Work</h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                <div>
-                  <div className="flex justify-between items-center mb-2">
-                    <h3 className="text-xl font-semibold">GIS Work Website</h3>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      onClick={() => setIsExpanded(!isExpanded)}
+              <div className="mb-8">
+                <h3 className="text-xl font-semibold mb-4">GIS Work Website</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div>
+                    <div className="flex justify-between items-center mb-2">
+                      <h4 className="font-medium">Live Preview</h4>
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => setIsExpanded(!isExpanded)}
+                      >
+                        {isExpanded ? 'Collapse ↑' : 'Expand ↓'}
+                      </Button>
+                    </div>
+                    <div className={`relative w-full mb-2 transition-all duration-300 ease-in-out ${
+                      isExpanded ? 'h-[80vh]' : 'aspect-video'
+                    }`}>
+                      <iframe
+                        src="https://heyweol.github.io/nifa-webdev"
+                        className="absolute top-0 left-0 w-full h-full rounded-lg border border-border"
+                        allow="fullscreen"
+                      />
+                    </div>
+                    <a 
+                      href="https://heyweol.github.io/nifa-webdev" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-sm text-primary hover:underline"
                     >
-                      {isExpanded ? 'Collapse ↑' : 'Expand ↓'}
-                    </Button>
+                      Open website in new tab →
+                    </a>
                   </div>
-                  <div className={`relative w-full mb-2 transition-all duration-300 ease-in-out ${
-                    isExpanded ? 'h-[80vh]' : 'aspect-video'
-                  }`}>
-                    <iframe
-                      src="https://heyweol.github.io/nifa-webdev"
-                      className="absolute top-0 left-0 w-full h-full rounded-lg border border-border"
-                      allow="fullscreen"
-                    />
+
+                  <div>
+                    <h4 className="font-medium mb-4">Project Highlights</h4>
+                    <div className="space-y-4">
+                      <div className="relative aspect-video w-full mb-4">
+                        {websiteContent[selectedWebsiteImage].type === 'video' ? (
+                          <video
+                            src={websiteContent[selectedWebsiteImage].content}
+                            controls
+                            className="w-full h-full rounded-lg border border-border"
+                          />
+                        ) : (
+                          <Image
+                            src={websiteContent[selectedWebsiteImage].content}
+                            alt={`USDA Website ${selectedWebsiteImage}`}
+                            fill
+                            className="object-contain rounded-lg border border-border"
+                          />
+                        )}
+                      </div>
+                      <p className="text-sm text-muted-foreground mb-4">
+                        {websiteContent[selectedWebsiteImage].description}
+                      </p>
+                      
+                      <div className="flex gap-2">
+                        {websiteContent.map((content, index) => (
+                          <button
+                            key={index}
+                            onClick={() => setSelectedWebsiteImage(index)}
+                            className={cn(
+                              "relative w-20 h-20 rounded-lg overflow-hidden border-2 transition-all",
+                              selectedWebsiteImage === index 
+                                ? "border-primary" 
+                                : "border-border hover:border-primary/50"
+                            )}
+                          >
+                            <Image
+                              src={content.thumbnail}
+                              alt={`USDA Website thumbnail ${index}`}
+                              fill
+                              className="object-cover"
+                            />
+                            {content.type === 'video' && (
+                              <div className="absolute inset-0 flex items-center justify-center bg-black/20">
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  viewBox="0 0 24 24"
+                                  fill="white"
+                                  className="w-8 h-8"
+                                >
+                                  <path
+                                    fillRule="evenodd"
+                                    d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286l-11.54 6.347c-1.25.687-2.779-.217-2.779-1.643V5.653Z"
+                                    clipRule="evenodd"
+                                  />
+                                </svg>
+                              </div>
+                            )}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div>
-                  <h3 className="text-xl font-semibold mb-4">Project Overview</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Detailed description of the GIS work website project...
-                  </p>
-                  <a 
-                    href="https://heyweol.github.io/nifa-webdev" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-sm text-primary hover:underline"
-                  >
-                    Open website in new tab →
-                  </a>
                 </div>
               </div>
 
