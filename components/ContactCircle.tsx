@@ -11,7 +11,7 @@ const contactItems = [
   { image: '/images/callme.jpg', info: 'Phone: 779-775-2283' },
 ];
 
-const TextBubble = ({ info, link }: { info: string; link?: string }) => (
+const TextBubble = ({ info, link, position }: { info: string; link?: string; position: string }) => (
   <motion.div
     initial={{ opacity: 0, scale: 0.8, x: -10 }}
     animate={{ opacity: 1, scale: 1, x: 0 }}
@@ -97,5 +97,3 @@ export function ContactCircle() {
     </div>
   );
 }
-
-
